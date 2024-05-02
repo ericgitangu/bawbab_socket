@@ -8,7 +8,7 @@
     "build": "next build",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "start": "forever start app/index.mjs",
+    "start": "next start -p 4000",
     "stop": "forever stop app/index.mjs"
   },
   "keywords": [],
@@ -18,10 +18,14 @@
     "express": "^4.19.2",
     "http-proxy-middleware": "^3.0.0",
     "next": "^14.2.3",
-    "socket.io": "^4.7.5"
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5"
   },
   "devDependencies": {
+    "@types/react": "18.3.1",
     "nodemon": "^3.1.0",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "prop-types": "^15.8.1",
+    "typescript": "5.4.5"
   }
 }
