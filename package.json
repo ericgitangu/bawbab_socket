@@ -2,21 +2,23 @@
   "name": "bawbab_socket",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.mjs",
+  "main": "app",
   "scripts": {
-    "dev": "node src/index.mjs",
+    "dev": "node app/index.mjs",
     "build": "echo 'No build step defined'",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "start": "forever start src/index.mjs",
-    "stop": "forever stop src/index.mjs"
+    "start": "forever start app/index.mjs",
+    "stop": "forever stop app/index.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cross-env": "^7.0.3",
-    "fkill": "^9.0.0"
+    "express": "^4.19.2",
+    "http-proxy-middleware": "^3.0.0",
+    "next": "^14.2.3",
+    "socket.io": "^4.7.5"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"

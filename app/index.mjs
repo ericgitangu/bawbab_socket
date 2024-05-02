@@ -52,7 +52,7 @@ app.prepare().then(() => {
         return handle(req, res)
     });
 
-    const PORT = process.env.PORT || 3001;
+    const PORT = process.env.PORT || 8000;
     httpServer.listen(PORT, () => {
         console.log(`\r\n⚡️[server]: Server is running at https://localhost:${PORT}`);
     });
