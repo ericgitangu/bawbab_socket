@@ -9,7 +9,7 @@ interface MessageData {
 
 const ServerHealthStatus = () => {
   const [serverStatus, setServerStatus] = useState("Connecting...");
-  const socket = useSocket("http://localhost:8000", {
+  const socket = useSocket("https://bawbabsocket.netlify.app:8000", {
     connect: () => {
       console.log("Socket.IO connected!");
       setServerStatus("Socket is running and healthy");

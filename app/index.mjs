@@ -44,7 +44,7 @@ app
     server.use(
       "/api",
       createProxyMiddleware({
-        target: "http://localhost:4000", // original url
+        target: "https://bawbabsocket.netlify.app", // original url
         changeOrigin: true,
       }),
     );

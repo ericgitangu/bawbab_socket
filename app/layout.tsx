@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [isConnected, setIsConnected] = useState(false);
-  const socket = useSocket("http://localhost:8000", {
+  const socket = useSocket("https://bawbabsocket.netlify.app:8000", {
     connect: () => {
       console.log("Socket.IO connected!");
       setIsConnected(true);
