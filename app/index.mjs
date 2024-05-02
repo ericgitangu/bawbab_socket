@@ -44,7 +44,7 @@ app
     server.use(
       "/api",
       createProxyMiddleware({
-        target: "https://bawbabsocket.netlify.app", // original url
+        target: "http:localhost:3000", // original url
         changeOrigin: true,
       }),
     );
@@ -56,7 +56,7 @@ app
     const PORT = process.env.PORT || 8000;
     httpServer.listen(PORT, () => {
       console.log(
-        `\r\n⚡️[server]: Server is running at http://localhost:${PORT}`,
+        `\r\n⚡️[server]: Server is running at https://bawbabsocket.netlify.app:${PORT}`,
       );
     });
   })
