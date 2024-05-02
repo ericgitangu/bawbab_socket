@@ -1,31 +1,20 @@
 {
   "name": "bawbab_socket",
   "version": "1.0.0",
-  "description": "",
+  "description": "Real-time and poling websocket server",
   "main": "app",
   "scripts": {
-    "serve": "node app/index.mjs",
-    "dev": "next dev",
-    "build": "next build",
-    "format": "prettier --write .",
-    "start": "next start -p 4000",
-    "stop": "forever stop app/index.mjs"
+    "serve": "node socket/index.mjs"
   },
   "keywords": [],
-  "author": "",
+  "author": "Eric Gitangu <EricG@bawbab.us>",
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
-    "http-proxy-middleware": "^3.0.0",
-    "next": "^14.2.3",
     "socket.io": "^4.7.5",
     "socket.io-client": "^4.7.5"
   },
   "devDependencies": {
-    "@types/react": "18.3.1",
-    "nodemon": "^3.1.0",
-    "prettier": "^3.2.5",
-    "prop-types": "^15.8.1",
-    "typescript": "5.4.5"
+    "prettier": "^3.2.5"
   }
 }
