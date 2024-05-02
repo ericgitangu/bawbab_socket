@@ -1,6 +1,6 @@
 import express from "express";
 import { createServer } from "http";
-import { Server } from "socket?.io";
+import { Server } from "socket.io";
 import { createProxyMiddleware } from "http-proxy-middleware";
 import next from "next";
 
