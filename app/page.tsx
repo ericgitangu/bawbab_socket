@@ -1,28 +1,26 @@
 "use client";
 import React from "react";
 import { useEffect, useState } from "react";
-import { io } from "socket.io-client";
+import useSocket from "./hooks/useSocketHook";
+
+interface MessageData {
+  message: string;
+}
 
 const ServerHealthStatus = () => {
   const [serverStatus, setServerStatus] = useState("Connecting...");
-
-  useEffect(() => {
-    const socket = io();
-
-    socket.on("connect", () => {
-      setServerStatus("Server is healthy and running");
-    });
-
-    socket.on("disconnect", () => {
-      setServerStatus("Server disconnected");
-    });
-
-    return () => {
-      socket.off("connect");
-      socket.off("disconnect");
-      socket.close();
-    };
-  }, []);
+  const socket = useSocket("http://localhost:8000", {
+    connect: () => {
+      console.log("Socket.IO connected!");
+      setServerStatus("Socket is running and healthy");
+    },
+    message: (data: MessageData) => console.log("Received from server:", data),
+    disconnect: () => {
+      console.log("Socket.IO disconnected!");
+      setServerStatus("Socket has stopped!");
+    },
+    error: (error: Error) => console.log("Socket.IO error:", error),
+  });
 
   return (
     <div
@@ -31,6 +29,7 @@ const ServerHealthStatus = () => {
         backgroundColor: "#e0e0e0",
         borderRadius: "4px",
         textAlign: "center",
+        alignItems: "center",
         color:
           serverStatus === "Server is healthy and running"
             ? "#4caf50"

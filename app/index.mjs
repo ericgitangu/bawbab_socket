@@ -1,6 +1,6 @@
 import express from "express";
 import { createServer } from "http";
-import { Server } from "socket.io";
+import { Server } from "socket?.io";
 import { createProxyMiddleware } from "http-proxy-middleware";
 import next from "next";
 
@@ -26,25 +26,25 @@ app
     io.on("connection", (socket) => {
       console.log("Socket.IO connection established");
 
-      socket.on("disconnect", () => {
+      socket?.on("disconnect", () => {
         console.log("Socket.IO connection disconnected");
       });
 
-      socket.on("message", (data) => {
+      socket?.on("message", (data) => {
         console.log("Received message from client:", data);
-        socket.emit("message", "Heartbeat from the server!");
+        socket?.emit("message", "Heartbeat from the server!");
       });
 
-      socket.on("sendMessage", (data) => {
+      socket?.on("sendMessage", (data) => {
         console.log("Received message:", data);
-        socket.emit("broadcastMessage", data);
+        socket?.emit("broadcastMessage", data);
       });
     });
 
     server.use(
       "/api",
       createProxyMiddleware({
-        target: "http://localhost:3000", // original url
+        target: "http://localhost:4000", // original url
         changeOrigin: true,
       }),
     );
@@ -56,7 +56,7 @@ app
     const PORT = process.env.PORT || 8000;
     httpServer.listen(PORT, () => {
       console.log(
-        `\r\n⚡️[server]: Server is running at https://localhost:${PORT}`,
+        `\r\n⚡️[server]: Server is running at http://localhost:${PORT}`,
       );
     });
   })

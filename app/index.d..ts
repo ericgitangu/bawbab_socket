@@ -4,4 +4,3 @@ interface LayoutProps {
   params?: any;
   title?: string;
 }
-
