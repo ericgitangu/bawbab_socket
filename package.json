@@ -4,7 +4,7 @@
   "description": "",
   "main": "app",
   "scripts": {
-    "serve": "node app/index.mjs",
+    "serve": "node app/index.mjs &",
     "dev": "next dev",
     "build": "next build",
     "format": "prettier --write .",
