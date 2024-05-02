@@ -1,11 +1,12 @@
 import React from "react";
 import Head from "next/head";
 
-const RootLayout: React.FC<LayoutProps> = ({ children, title }) => {
+
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>Real-time</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       {/* <header>Navigation or header content goes here</header> */}
@@ -16,5 +17,3 @@ const RootLayout: React.FC<LayoutProps> = ({ children, title }) => {
     </>
   );
 };
-
-export default RootLayout;
