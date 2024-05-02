@@ -1,5 +1,5 @@
 interface LayoutProps {
-    children: React.ReactNode;
-    title?: string;
-  }
-  
+  children: React.ReactNode;
+  title: string;
+}
+

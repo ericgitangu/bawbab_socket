@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "node app/index.mjs",
     "build": "next build",
-    "lint": "eslint .",
     "format": "prettier --write .",
     "start": "next start -p 4000",
     "stop": "forever stop app/index.mjs"
