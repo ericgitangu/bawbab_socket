@@ -4,13 +4,15 @@
   "description": "Real-time and poling websocket server",
   "main": "app",
   "scripts": {
-    "serve": "node socket/index.mjs"
+    "serve": "node socket/index.mjs",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "Eric Gitangu <EricG@bawbab.us>",
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
+    "react": "^18.3.1",
     "socket.io": "^4.7.5",
     "socket.io-client": "^4.7.5"
   },
